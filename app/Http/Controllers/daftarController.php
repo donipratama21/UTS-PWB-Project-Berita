@@ -18,16 +18,14 @@ class daftarController extends Controller
 			"kelamin" => ['required'],
 		]);		
 
-		echo $request->get("email");
-		echo $request->get("password");
-		echo $request->get("alamat");
-		echo $request->get("kota");
-		echo $request->get("kelamin");
-
 		$nama_file = time().".".$request->file("foto")->extension();
 		$request->file("foto")->move(public_path(), $nama_file);
-		echo "<img src='/$nama_file'>";
-		
-		echo "<br>form ini diproses";
+
+		echo "<img src='/$nama_file'>" . "<br>";
+		echo "Email : " . $request->get("email") . "<br>";
+		echo "Password : " . $request->get("password") . "<br>";
+		echo "Alamat : " . $request->get("alamat") . "<br>";
+		echo "Kota : " . $request->get("kota") . "<br>";
+		echo "Jenis Kelamin : " . $request->get("kelamin") . "<br>";
 	}
 }

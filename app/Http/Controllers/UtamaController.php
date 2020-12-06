@@ -58,10 +58,8 @@ class UtamaController extends Controller
 			"password" => ['required',"between:5,100"],
 		]);		
 
-		echo $request->get("email");
-		echo $request->get("password");
-		
-		echo "<br>form ini diproses";
+		echo "Email : ". $request->get("email") . "<br>";
+		echo "Password : " . $request->get("password") . "<br>";
 	}
 
 }
